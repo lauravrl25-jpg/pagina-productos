@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const contenido = {
     mango: {
       palabra: "envase",
-      caption: "Lata 330 ml — mango de altura",
+      caption: "Lata 330 ml — mango y piña",
       datos: {
         ml: "330 ml",
-        fruta: "62%",
+        fruta: "95%",
         azucar: "Sin añadir"
       },
       acento1: "--mango-1",
@@ -28,10 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     pina: {
       palabra: "formato",
-      caption: "Tetrapak 1 L — piña recién exprimida",
+      caption: "Tetrapak 200 ml — mango y piña",
       datos: {
-        ml: "1 L",
-        fruta: "70%",
+        ml: "200 ml",
+        fruta: "95%",
         azucar: "Sin añadir"
       },
       acento1: "--pina-1",
