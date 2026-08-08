@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trópika — Mango en lata · Piña en tetrapak</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="grano"></div>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a href="#top" class="marca">Trópika</a>
+      <nav class="nav-links">
+        <a href="#producto">Producto</a>
+        <a href="#specs">Ficha técnica</a>
+        <a href="#pedido">Pedir</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ HERO / SHOWCASE ============ -->
+  <main>
+    <section class="showcase" id="top" data-sabor="mango">
+
+      <div class="showcase-glow" aria-hidden="true"></div>
+
+      <div class="wrap showcase-grid">
+
+        <div class="showcase-copy">
+          <p class="eyebrow">Dos formatos, un mismo trópico</p>
+          <h1 class="titulo">
+            El sabor cambia<br>
+            de <span class="palabra-sabor">envase</span>
+          </h1>
+          <p class="lede">
+            Mango prensado en lata para llevar a cualquier parte, y piña
+            recién exprimida en tetrapak para la mesa de casa. Mismo jugo,
+            mismo trópico, distinta forma de tomarlo.
+          </p>
+
+          <div class="selector-sabor" role="tablist" aria-label="Elegir sabor">
+            <button
+              type="button"
+              class="chip-sabor activo"
+              data-sabor="mango"
+              role="tab"
+              aria-selected="true"
+            >
+              <span class="chip-punto punto-mango"></span>
+              Mango · Lata
+            </button>
+            <button
+              type="button"
+              class="chip-sabor"
+              data-sabor="pina"
+              role="tab"
+              aria-selected="false"
+            >
+              <span class="chip-punto punto-pina"></span>
+              Piña · Tetrapak
+            </button>
+          </div>
+
+          <div class="hero-datos">
+            <div class="dato">
+              <span class="dato-num" data-dato="ml">330 ml</span>
+              <span class="dato-label">Contenido</span>
+            </div>
+            <div class="dato">
+              <span class="dato-num" data-dato="fruta">62%</span>
+              <span class="dato-label">Fruta real</span>
+            </div>
+            <div class="dato">
+              <span class="dato-num" data-dato="azucar">Sin añadir</span>
+              <span class="dato-label">Azúcar</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-visual">
+          <div class="envase-stage">
+
+            <!-- LATA -->
+            <div class="envase envase-lata" aria-hidden="true">
+              <div class="lata-tapa"></div>
+              <div class="lata-cuerpo">
+                <div class="lata-brillo"></div>
+                <div class="lata-etiqueta">
+                  <span class="lata-marca">Trópika</span>
+                  <span class="lata-sabor">Mango</span>
+                </div>
+                <div class="lata-anillos anillo-1"></div>
+                <div class="lata-anillos anillo-2"></div>
+              </div>
+              <div class="lata-base"></div>
+            </div>
+
+            <!-- TETRAPAK -->
+            <div class="envase envase-tetra" aria-hidden="true">
+              <div class="tetra-techo"></div>
+              <div class="tetra-cuerpo">
+                <div class="tetra-etiqueta">
+                  <span class="lata-marca">Trópika</span>
+                  <span class="lata-sabor">Piña</span>
+                </div>
+                <div class="tetra-linea"></div>
+              </div>
+              <div class="tetra-pico"></div>
+            </div>
+
+          </div>
+
+          <p class="visual-caption" data-caption="mango">Lata 330 ml — mango de altura</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ DIVISOR FIRMA (cáscara) ============ -->
+    <div class="divisor-cascara" aria-hidden="true">
+      <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
+        <path class="cascara-path" d="M0,40 C 200,90 350,-10 600,40 C 850,90 1000,-10 1200,40 L1200,80 L0,80 Z"></path>
+      </svg>
+    </div>
+
+    <!-- ============ PRODUCTO — DETALLE ============ -->
+    <section class="detalle" id="producto">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-clara">Por qué cambia el envase</p>
+        <h2 class="titulo-seccion">No es empaque distinto por capricho</h2>
+
+        <div class="detalle-grid">
+          <article class="detalle-card">
+            <span class="detalle-num">01</span>
+            <h3>La lata protege la fruta ácida</h3>
+            <p>El mango de altura oxida rápido apenas se expone al aire. El
+            aluminio bloquea la luz y el oxígeno por completo, así que el
+            sabor llega igual de vivo el día uno que el día noventa.</p>
+          </article>
+          <article class="detalle-card">
+            <span class="detalle-num">02</span>
+            <h3>El tetrapak conserva la pulpa</h3>
+            <p>La piña recién exprimida trae pulpa suelta que necesita un
+            envase que no reaccione con la acidez. El cartón laminado hace
+            eso sin dejar sabor metálico ni alterar la textura.</p>
+          </article>
+          <article class="detalle-card">
+            <span class="detalle-num">03</span>
+            <h3>Uno viaja, el otro se sirve</h3>
+            <p>La lata se abre y se toma directo, pensada para el bolso o
+            la lonchera. El tetrapak con pico dosificador está hecho para
+            la nevera de casa, vaso tras vaso.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FICHA TÉCNICA ============ -->
+    <section class="specs" id="specs">
+      <div class="wrap">
+        <p class="eyebrow eyebrow-clara">Ficha técnica</p>
+        <h2 class="titulo-seccion">Uno junto al otro</h2>
+
+        <div class="specs-tabla" role="table" aria-label="Comparación de presentaciones">
+          <div class="specs-fila specs-header" role="row">
+            <span role="columnheader"></span>
+            <span role="columnheader" class="specs-col-mango">Mango · Lata</span>
+            <span role="columnheader" class="specs-col-pina">Piña · Tetrapak</span>
+          </div>
+
+          <div class="specs-fila" role="row">
+            <span class="specs-etiqueta" role="rowheader">Contenido</span>
+            <span role="cell">330 ml</span>
+            <span role="cell">1 L</span>
+          </div>
+          <div class="specs-fila" role="row">
+            <span class="specs-etiqueta" role="rowheader">Fruta real</span>
+            <span role="cell">62%</span>
+            <span role="cell">70%</span>
+          </div>
+          <div class="specs-fila" role="row">
+            <span class="specs-etiqueta" role="rowheader">Azúcar añadida</span>
+            <span role="cell">Sin añadir</span>
+            <span role="cell">Sin añadir</span>
+          </div>
+          <div class="specs-fila" role="row">
+            <span class="specs-etiqueta" role="rowheader">Conservación</span>
+            <span role="cell">18 meses sin refrigerar</span>
+            <span role="cell">9 meses sin abrir</span>
+          </div>
+          <div class="specs-fila" role="row">
+            <span class="specs-etiqueta" role="rowheader">Ideal para</span>
+            <span role="cell">Llevar, una sola porción</span>
+            <span role="cell">Casa, varias porciones</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CTA / PEDIDO ============ -->
+    <section class="cta" id="pedido">
+      <div class="wrap cta-inner">
+        <h2 class="titulo-cta">
+          ¿Lata de mango o tetrapak de piña?
+        </h2>
+        <p class="cta-sub">Pide el que quieras probar primero, o los dos.</p>
+        <div class="cta-botones">
+          <a href="#" class="btn btn-mango" data-sabor-cta="mango">Pedir mango — lata</a>
+          <a href="#" class="btn btn-pina" data-sabor-cta="pina">Pedir piña — tetrapak</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <span>Trópika</span>
+      <span class="footer-dim">Jugo de fruta real, sin azúcar añadida.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
