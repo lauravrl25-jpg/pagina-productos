@@ -3,229 +3,482 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PAGINA PRODUCTOS</title>
+<title>Sol Aris — Gaseosas de Girardot S.A.S</title>
+<meta name="description" content="Sol Aris, bebida de Gaseosas de Girardot S.A.S. Presentaciones en caja de 200 ml y lata de 330 ml. Sitio de material de marketing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A63;
+    --navy-deep:#101A42;
+    --navy-ink:#0B1330;
+    --gold:#D4A82F;
+    --gold-line:#E7C34E;
+    --ink:#1A1D29;
+    --muted:#5B6072;
+    --paper:#FFFFFF;
+    --bg-soft:#F5F6F9;
+    --border:#E2E4EC;
+    --max:1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Sora',sans-serif;
+    font-weight:700;
+    margin:0;
+    line-height:1.18;
+    color:var(--navy);
+    letter-spacing:-0.01em;
+  }
+  p{line-height:1.7; margin:0 0 1em; color:var(--muted);}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .max{max-width:var(--max); margin:0 auto; padding:0 32px;}
+  section{position:relative;}
+
+  ::selection{background:var(--gold-line); color:var(--navy-ink);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; scroll-behavior:auto !important;}
+  }
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    background:rgba(255,255,255,.98);
+    border-bottom:1px solid var(--border);
+    padding:18px 0;
+  }
+  header .max{display:flex; align-items:center; justify-content:space-between; gap:20px;}
+  .brandmark{display:flex; align-items:baseline; gap:2px; font-family:'Sora'; font-weight:700; font-size:1.25rem; color:var(--navy); text-decoration:none; letter-spacing:-0.01em;}
+  .brandmark .dot{color:var(--gold);}
+  nav.links{display:flex; gap:34px; list-style:none; margin:0; padding:0;}
+  nav.links a{
+    text-decoration:none; font-weight:500; font-size:.92rem; color:var(--ink);
+    padding:4px 0; border-bottom:1.5px solid transparent;
+  }
+  nav.links a:hover{border-color:var(--gold);}
+  .navwrap{display:flex; align-items:center; gap:32px;}
+  .burger{display:none; width:38px; height:38px; border:1px solid var(--border); border-radius:8px; background:var(--paper); cursor:pointer; align-items:center; justify-content:center;}
+  .burger span, .burger span::before, .burger span::after{
+    content:''; display:block; width:16px; height:1.5px; background:var(--navy); position:relative;
+  }
+  .burger span::before{position:absolute; top:-5px;}
+  .burger span::after{position:absolute; top:5px;}
+
+  @media (max-width:860px){
+    nav.links{
+      position:fixed; top:66px; right:16px; left:16px;
+      background:var(--paper); border:1px solid var(--border); border-radius:10px;
+      flex-direction:column; padding:16px 22px; gap:14px;
+      box-shadow:0 12px 30px rgba(16,20,48,.12);
+      transform:translateY(-10px); opacity:0; pointer-events:none; transition:all .2s ease;
+    }
+    nav.links.open{transform:translateY(0); opacity:1; pointer-events:auto;}
+    .burger{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:158px 0 100px;
+    background:var(--bg-soft);
+  }
+  .hero .max{display:grid; grid-template-columns:1fr .92fr; gap:56px; align-items:center;}
+  .eyebrow{
+    font-size:.78rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:16px; display:block;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4.4vw, 3.4rem);
+    margin-bottom:20px;
+  }
+  .hero h1 em{font-style:normal; color:var(--ink); border-bottom:3px solid var(--gold-line); padding-bottom:2px;}
+  .hero p.lead{font-size:1.08rem; max-width:44ch; color:var(--muted);}
+  .hero-ctas{display:flex; flex-wrap:wrap; gap:14px; margin-top:30px;}
+  .btn{
+    font-family:'Inter'; font-weight:600; font-size:.95rem; text-decoration:none;
+    display:inline-flex; align-items:center; gap:8px;
+    padding:13px 26px; border-radius:8px; border:1.5px solid var(--navy);
+    transition:background .15s ease, color .15s ease, transform .15s ease;
+    cursor:pointer;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-navy{background:var(--navy); color:#fff;}
+  .btn-navy:hover{background:var(--navy-deep);}
+  .btn-outline{background:transparent; color:var(--navy);}
+  .btn-outline:hover{background:var(--navy); color:#fff;}
+
+  .hero-art{position:relative; height:460px; display:flex; align-items:center; justify-content:center;}
+  .hero-art .backdrop{
+    position:absolute; width:380px; height:380px; border-radius:50%;
+    background:radial-gradient(circle, #fff 0%, #EDEFF5 70%, rgba(237,239,245,0) 100%);
+    border:1px solid var(--border);
+  }
+  .hero-art img{position:relative; filter:drop-shadow(0 24px 30px rgba(16,20,48,.16));}
+  .hero-art .can{width:42%; margin-right:-36px; z-index:2;}
+  .hero-art .box{width:32%; margin-left:-10px; align-self:flex-end; margin-bottom:14px; z-index:1;}
+  .hero-art .pair{display:flex; align-items:flex-end; justify-content:center;}
+
+  @media (max-width:860px){
+    .hero .max{grid-template-columns:1fr;}
+    .hero-art{height:340px; margin-top:10px;}
+    .hero{padding-top:120px;}
+  }
+
+  /* ---------- FEATURE STRIP ---------- */
+  .strip{background:var(--paper); border-bottom:1px solid var(--border); padding:38px 0;}
+  .strip .max{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  @media (max-width:720px){.strip .max{grid-template-columns:1fr; gap:20px;}}
+  .strip-item{display:flex; align-items:center; gap:14px;}
+  .strip-item .ic{
+    flex:none; width:42px; height:42px; border-radius:50%; border:1.5px solid var(--gold-line);
+    display:flex; align-items:center; justify-content:center; color:var(--navy);
+  }
+  .strip-item h4{font-family:'Sora'; font-size:.95rem; color:var(--navy); margin:0 0 3px; font-weight:600;}
+  .strip-item p{margin:0; font-size:.85rem; color:var(--muted);}
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .sec-head{max-width:640px; margin-bottom:48px;}
+  .sec-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .sec-head p{font-size:1rem; margin-top:12px;}
+  .kicker{
+    font-size:.78rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase;
+    color:var(--gold); display:block; margin-bottom:14px;
+  }
+
+  /* ---------- PRODUCTS ---------- */
+  .productos{padding:96px 0; background:var(--paper);}
+  .prod-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px;}
+  @media (max-width:860px){.prod-grid{grid-template-columns:1fr;}}
+
+  .prod-card{
+    border:1px solid var(--border); border-radius:14px; background:#fff;
+    padding:34px; box-shadow:0 6px 24px rgba(16,20,48,.045);
+  }
+  .prod-top{display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:6px;}
+  .prod-badge{
+    font-size:.72rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--navy);
+    border:1px solid var(--border); border-radius:100px; padding:5px 12px;
+  }
+  .prod-vol{font-family:'Sora'; font-weight:700; font-size:1.5rem; color:var(--navy);}
+  .prod-img-wrap{display:flex; justify-content:center; margin:14px 0 22px; padding:20px; background:var(--bg-soft); border-radius:10px;}
+  .prod-img-wrap img{max-height:250px; width:auto; margin:0 auto;}
+  .prod-card h3{font-size:1.3rem; margin-bottom:6px;}
+  .prod-sub{color:var(--muted); font-weight:500; margin-bottom:18px; font-size:.92rem;}
+  .prod-card .ingredientes{font-size:.9rem; color:var(--muted); margin-bottom:22px; padding-bottom:22px; border-bottom:1px solid var(--border);}
+  .prod-card .ingredientes b{color:var(--ink); font-weight:600;}
+
+  table.nutri{width:100%; border-collapse:collapse; font-size:.87rem; margin-bottom:18px;}
+  table.nutri caption{text-align:left; font-family:'Sora'; font-weight:600; color:var(--navy); margin-bottom:10px; font-size:.88rem;}
+  table.nutri th, table.nutri td{padding:8px 0; border-bottom:1px solid var(--border); text-align:left;}
+  table.nutri th{font-weight:600; color:var(--muted); font-size:.74rem; text-transform:uppercase; letter-spacing:.04em;}
+  table.nutri td:not(:first-child), table.nutri th:not(:first-child){text-align:right;}
+
+  .sweetener-note{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:.78rem; font-weight:600; color:var(--navy); background:var(--bg-soft);
+    border:1px solid var(--border); padding:7px 12px; border-radius:8px;
+  }
+
+  /* ---------- CONCEPTO ---------- */
+  .concepto{padding:104px 0; background:var(--navy); color:#fff;}
+  .concepto .max{display:grid; grid-template-columns:1.1fr .9fr; gap:60px; align-items:center;}
+  @media (max-width:860px){.concepto .max{grid-template-columns:1fr;}}
+  .concepto .kicker{color:var(--gold-line);}
+  .concepto h2{color:#fff; font-size:clamp(1.7rem,3vw,2.2rem);}
+  .concepto p.body{color:#C7CBE0; font-size:1.02rem; max-width:54ch;}
+
+  .palette{display:flex; gap:16px; margin-top:36px; flex-wrap:wrap;}
+  .swatch{width:60px; text-align:center; font-size:.7rem; color:#9BA1C4; font-weight:500;}
+  .swatch .chip{width:60px; height:44px; border-radius:6px; border:1px solid rgba(255,255,255,.25); margin-bottom:8px;}
+
+  .bridge-art{width:100%; height:auto;}
+
+  /* ---------- ORIGEN ---------- */
+  .origen{padding:96px 0; background:var(--bg-soft);}
+  .origen .max{display:grid; grid-template-columns:.95fr 1.05fr; gap:56px; align-items:center;}
+  @media (max-width:860px){.origen .max{grid-template-columns:1fr;}}
+  .origen-card{
+    border:1px solid var(--border); border-radius:14px; background:#fff; padding:30px 32px;
+    box-shadow:0 6px 24px rgba(16,20,48,.045);
+  }
+  .origen-card h3{font-size:1.05rem; margin-bottom:12px;}
+  .origen-card p{font-size:.92rem; margin-bottom:0;}
+  .fact-list{list-style:none; margin:0; padding:0; display:grid; gap:14px; margin-top:26px;}
+  .fact-list li{display:flex; gap:12px; align-items:flex-start; font-size:.96rem; color:var(--ink);}
+  .fact-list li .dot{
+    flex:none; width:6px; height:6px; border-radius:50%; background:var(--gold);
+    margin-top:9px;
+  }
+
+  /* ---------- GALERIA ---------- */
+  .galeria{padding:96px 0; background:var(--paper);}
+  .gal-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px;}
+  @media (max-width:860px){.gal-grid{grid-template-columns:1fr;}}
+  .gal-item{
+    border:1px solid var(--border); border-radius:12px; overflow:hidden; background:#fff;
+    text-decoration:none; color:var(--ink); display:block;
+    transition:box-shadow .18s ease; box-shadow:0 6px 20px rgba(16,20,48,.04);
+  }
+  .gal-item:hover{box-shadow:0 12px 30px rgba(16,20,48,.1);}
+  .gal-item img{width:100%; height:320px; object-fit:cover; object-position:top;}
+  .gal-caption{padding:18px 22px; display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border);}
+  .gal-caption strong{font-family:'Sora'; font-size:.98rem; color:var(--navy); font-weight:600;}
+  .gal-caption span{font-size:.8rem; color:var(--muted); font-weight:500;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-ink); color:#9BA1C4; padding:60px 0 30px;}
+  footer .max{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:40px;}
+  @media (max-width:720px){footer .max{grid-template-columns:1fr; gap:30px;}}
+  footer .brandmark{color:#fff;}
+  footer h4{font-family:'Sora'; color:#fff; font-size:.88rem; margin-bottom:16px; font-weight:600; text-transform:uppercase; letter-spacing:.06em;}
+  footer p, footer address{font-size:.88rem; line-height:1.8; font-style:normal; color:#9BA1C4; margin:0 0 6px;}
+  .foot-bottom{
+    max-width:var(--max); margin:44px auto 0; padding:22px 32px 0; border-top:1px solid #262E52;
+    font-size:.78rem; color:#767CA0; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+</style>
 </head>
 <body>
 
-  <div class="grano"></div>
+<header id="siteHeader">
+  <div class="max navwrap">
+    <a class="brandmark" href="#top">Sol Aris<span class="dot">.</span></a>
+    <nav class="links" id="navLinks">
+      <a href="#top">Inicio</a>
+      <a href="#producto">Producto</a>
+      <a href="#concepto">Concepto</a>
+      <a href="#origen">Origen</a>
+      <a href="#galeria">Material gráfico</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Abrir menú"><span></span></button>
+  </div>
+</header>
 
-  <!-- ============ NAV ============ -->
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a href="#top" class="marca">Trópika</a>
-      <nav class="nav-links">
-        <a href="#producto">Producto</a>
-        <a href="#specs">Ficha técnica</a>
-        <a href="#pedido">Pedir</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- ============ HERO / SHOWCASE ============ -->
-  <main>
-    <section class="showcase" id="top" data-sabor="mango">
-
-      <div class="showcase-glow" aria-hidden="true"></div>
-
-      <div class="wrap showcase-grid">
-
-        <div class="showcase-copy">
-          <p class="eyebrow">Dos formatos, un mismo trópico</p>
-          <h1 class="titulo">
-            El sabor cambia<br>
-            de <span class="palabra-sabor">envase</span>
-          </h1>
-          <p class="lede">
-            Mango prensado en lata para llevar a cualquier parte, y piña
-            recién exprimida en tetrapak para la mesa de casa. Mismo jugo,
-            mismo trópico, distinta forma de tomarlo.
-          </p>
-
-          <div class="selector-sabor" role="tablist" aria-label="Elegir sabor">
-            <button
-              type="button"
-              class="chip-sabor activo"
-              data-sabor="mango"
-              role="tab"
-              aria-selected="true"
-            >
-              <span class="chip-punto punto-mango"></span>
-              Lata
-            </button>
-            <button
-              type="button"
-              class="chip-sabor"
-              data-sabor="pina"
-              role="tab"
-              aria-selected="false"
-            >
-              <span class="chip-punto punto-pina"></span>
-             Tetrapak
-            </button>
-          </div>
-
-          <div class="hero-datos">
-            <div class="dato">
-              <span class="dato-num" data-dato="ml">330 ml</span>
-              <span class="dato-label">Contenido</span>
-            </div>
-            <div class="dato">
-              <span class="dato-num" data-dato="fruta">62%</span>
-              <span class="dato-label">Fruta real</span>
-            </div>
-            <div class="dato">
-              <span class="dato-num" data-dato="azucar">Sin añadir</span>
-              <span class="dato-label">Azúcar</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="showcase-visual">
-          <div class="envase-stage">
-
-            <!-- LATA -->
-            <div class="envase envase-lata" aria-hidden="true">
-              <div class="lata-tapa"></div>
-              <div class="lata-cuerpo">
-                <div class="lata-brillo"></div>
-                <div class="lata-etiqueta">
-                  <span class="lata-marca">Trópika</span>
-                  <span class="lata-sabor">Mango</span>
-                </div>
-                <div class="lata-anillos anillo-1"></div>
-                <div class="lata-anillos anillo-2"></div>
-              </div>
-              <div class="lata-base"></div>
-            </div>
-
-            <!-- TETRAPAK -->
-            <div class="envase envase-tetra" aria-hidden="true">
-              <div class="tetra-techo"></div>
-              <div class="tetra-cuerpo">
-                <div class="tetra-etiqueta">
-                  <span class="lata-marca">Trópika</span>
-                  <span class="lata-sabor">Piña</span>
-                </div>
-                <div class="tetra-linea"></div>
-              </div>
-              <div class="tetra-pico"></div>
-            </div>
-
-          </div>
-
-          <p class="visual-caption" data-caption="mango">Lata 330 ml — mango de altura</p>
-        </div>
-
+<section class="hero" id="top">
+  <div class="max">
+    <div class="hero-copy">
+      <span class="eyebrow">Gaseosas de Girardot S.A.S</span>
+      <h1>Más sol, más <em>vacaciones</em></h1>
+      <p class="lead">Sol Aris destapa el sabor del verano: una mezcla tropical de piña y mango, pensada para el sol, la diversión y los mejores momentos.</p>
+      <div class="hero-ctas">
+        <a href="#producto" class="btn btn-navy">Ver presentación en caja</a>
+        <a href="#producto" class="btn btn-outline">Ver presentación en lata</a>
       </div>
-    </section>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="backdrop"></div>
+      <div class="pair">
+        <img class="box" src="assets/product_caja.jpg" alt="Sol Aris en caja de 200 ml">
+        <img class="can" src="assets/product_lata.jpg" alt="Sol Aris en lata de 330 ml">
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ============ DIVISOR FIRMA (cáscara) ============ -->
-    <div class="divisor-cascara" aria-hidden="true">
-      <svg viewBox="0 0 1200 80" preserveAspectRatio="none">
-        <path class="cascara-path" d="M0,40 C 200,90 350,-10 600,40 C 850,90 1000,-10 1200,40 L1200,80 L0,80 Z"></path>
-      </svg>
+<div class="strip">
+  <div class="max">
+    <div class="strip-item">
+      <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke-linecap="round"/><circle cx="12" cy="12" r="4.5"/></svg></span>
+      <div><h4>Vive el verano</h4><p>Una mezcla tropical pensada para el sol.</p></div>
+    </div>
+    <div class="strip-item">
+      <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5c1 1 2.2 1.5 3.5 1.5s2.5-.5 3.5-1.5" stroke-linecap="round"/><circle cx="9" cy="10" r="1"/><circle cx="15" cy="10" r="1"/></svg></span>
+      <div><h4>Disfruta</h4><p>Sabor auténtico en cada porción.</p></div>
+    </div>
+    <div class="strip-item">
+      <span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3c3 4 5 7.5 5 10a5 5 0 0 1-10 0c0-2.5 2-6 5-10Z"/></svg></span>
+      <div><h4>Refresca</h4><p>Tu día, en dos presentaciones.</p></div>
+    </div>
+  </div>
+</div>
+
+<section class="productos" id="producto">
+  <div class="max">
+    <div class="sec-head">
+      <span class="kicker">Portafolio</span>
+      <h2>Dos presentaciones, una misma marca</h2>
+      <p>Sol Aris viene en caja tetra de 200 ml, un refresco de frutas sin gas, y en lata de 330 ml, una bebida gaseosa sabor piña-mango.</p>
     </div>
 
-    <!-- ============ PRODUCTO — DETALLE ============ -->
-    <section class="detalle" id="producto">
-      <div class="wrap">
-        <p class="eyebrow eyebrow-clara">Por qué cambia el envase</p>
-        <h2 class="titulo-seccion">No es empaque distinto por capricho</h2>
+    <div class="prod-grid">
 
-        <div class="detalle-grid">
-          <article class="detalle-card">
-            <span class="detalle-num">01</span>
-            <h3>La lata protege la fruta ácida</h3>
-            <p>El mango de altura oxida rápido apenas se expone al aire. El
-            aluminio bloquea la luz y el oxígeno por completo, así que el
-            sabor llega igual de vivo el día uno que el día noventa.</p>
-          </article>
-          <article class="detalle-card">
-            <span class="detalle-num">02</span>
-            <h3>El tetrapak conserva la pulpa</h3>
-            <p>La piña recién exprimida trae pulpa suelta que necesita un
-            envase que no reaccione con la acidez. El cartón laminado hace
-            eso sin dejar sabor metálico ni alterar la textura.</p>
-          </article>
-          <article class="detalle-card">
-            <span class="detalle-num">03</span>
-            <h3>Uno viaja, el otro se sirve</h3>
-            <p>La lata se abre y se toma directo, pensada para el bolso o
-            la lonchera. El tetrapak con pico dosificador está hecho para
-            la nevera de casa, vaso tras vaso.</p>
-          </article>
+      <article class="prod-card">
+        <div class="prod-top">
+          <span class="prod-badge">Caja Tetra Pak</span>
+          <span class="prod-vol">200 ml</span>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ FICHA TÉCNICA ============ -->
-    <section class="specs" id="specs">
-      <div class="wrap">
-        <p class="eyebrow eyebrow-clara">Ficha técnica</p>
-        <h2 class="titulo-seccion">Uno junto al otro</h2>
-
-        <div class="specs-tabla" role="table" aria-label="Comparación de presentaciones">
-          <div class="specs-fila specs-header" role="row">
-            <span role="columnheader"></span>
-            <span role="columnheader" class="specs-col-mango">Mango · Lata</span>
-            <span role="columnheader" class="specs-col-pina">Piña · Tetrapak</span>
-          </div>
-
-          <div class="specs-fila" role="row">
-            <span class="specs-etiqueta" role="rowheader">Contenido</span>
-            <span role="cell">330 ml</span>
-            <span role="cell">1 L</span>
-          </div>
-          <div class="specs-fila" role="row">
-            <span class="specs-etiqueta" role="rowheader">Fruta real</span>
-            <span role="cell">62%</span>
-            <span role="cell">70%</span>
-          </div>
-          <div class="specs-fila" role="row">
-            <span class="specs-etiqueta" role="rowheader">Azúcar añadida</span>
-            <span role="cell">Sin añadir</span>
-            <span role="cell">Sin añadir</span>
-          </div>
-          <div class="specs-fila" role="row">
-            <span class="specs-etiqueta" role="rowheader">Conservación</span>
-            <span role="cell">18 meses sin refrigerar</span>
-            <span role="cell">9 meses sin abrir</span>
-          </div>
-          <div class="specs-fila" role="row">
-            <span class="specs-etiqueta" role="rowheader">Ideal para</span>
-            <span role="cell">Llevar, una sola porción</span>
-            <span role="cell">Casa, varias porciones</span>
-          </div>
+        <div class="prod-img-wrap">
+          <img src="assets/product_caja.jpg" alt="Caja de Sol Aris de 200 ml">
         </div>
-      </div>
-    </section>
+        <h3>Refresco de frutas</h3>
+        <p class="prod-sub">Aprox. 1.5 porciones por envase · sabor mango y piña</p>
+        <p class="ingredientes"><b>Ingredientes:</b> agua, azúcar, jugo de frutas concentrado, acidulante (ácido cítrico), sabor natural y artificial, conservantes (benzoato de sodio, sorbato de potasio), edulcorantes (sucralosa, acesulfame K).</p>
+        <table class="nutri">
+          <caption>Información nutricional</caption>
+          <thead><tr><th>Por porción (200 ml)</th><th>Por porción</th><th>Por 100 ml</th></tr></thead>
+          <tbody>
+            <tr><td>Energía</td><td>85 kcal</td><td>43 kcal</td></tr>
+            <tr><td>Grasa total</td><td>0 g</td><td>0 g</td></tr>
+            <tr><td>Grasa saturada</td><td>0 g</td><td>0 g</td></tr>
+            <tr><td>Carbohidratos totales</td><td>21 g</td><td>10 g</td></tr>
+            <tr><td>Azúcares totales</td><td>19 g</td><td>9 g</td></tr>
+            <tr><td>Sodio</td><td>15 mg</td><td>8 mg</td></tr>
+            <tr><td>Proteína</td><td>0 g</td><td>0 g</td></tr>
+          </tbody>
+        </table>
+        <span class="sweetener-note">Contiene edulcorantes</span>
+      </article>
 
-    <!-- ============ CTA / PEDIDO ============ -->
-    <section class="cta" id="pedido">
-      <div class="wrap cta-inner">
-        <h2 class="titulo-cta">
-          ¿Lata de mango o tetrapak de piña?
-        </h2>
-        <p class="cta-sub">Pide el que quieras probar primero, o los dos.</p>
-        <div class="cta-botones">
-          <a href="#" class="btn btn-mango" data-sabor-cta="mango">Pedir mango — lata</a>
-          <a href="#" class="btn btn-pina" data-sabor-cta="pina">Pedir piña — tetrapak</a>
+      <article class="prod-card">
+        <div class="prod-top">
+          <span class="prod-badge">Lata</span>
+          <span class="prod-vol">330 ml</span>
         </div>
-      </div>
-    </section>
-  </main>
+        <div class="prod-img-wrap">
+          <img src="assets/product_lata.jpg" alt="Lata de Sol Aris de 330 ml">
+        </div>
+        <h3>Bebida gaseosa</h3>
+        <p class="prod-sub">Aprox. 1.5 porciones por envase · sabor piña, mango y caramelo</p>
+        <p class="ingredientes"><b>Ingredientes:</b> agua carbonatada, azúcar, ácido cítrico, saborizantes artificiales y naturales (piña, mango y sabor caramelo clase IV), amarillo ocaso FCF, benzoato de sodio y sorbato de potasio como conservantes.</p>
+        <table class="nutri">
+          <caption>Información nutricional</caption>
+          <thead><tr><th>Por 100 ml</th><th>Por porción</th></tr></thead>
+          <tbody>
+            <tr><td>Energía</td><td>45,5 kcal</td><td>150 kcal</td></tr>
+            <tr><td>Grasa total</td><td>0 g</td><td>0 g</td></tr>
+            <tr><td>Grasa saturada</td><td>0 g</td><td>0 g</td></tr>
+            <tr><td>Carbohidratos totales</td><td>11,8 g</td><td>39 g</td></tr>
+            <tr><td>Azúcares totales</td><td>11,5 g</td><td>38 g</td></tr>
+            <tr><td>Sodio</td><td>15,6 mg</td><td>45 mg</td></tr>
+          </tbody>
+        </table>
+        <span class="sweetener-note">Contiene edulcorantes</span>
+      </article>
 
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <span>Trópika</span>
-      <span class="footer-dim">Jugo de fruta real, sin azúcar añadida.</span>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section class="concepto" id="concepto">
+  <div class="max">
+    <div>
+      <span class="kicker">El concepto</span>
+      <h2>Sol, frescura y energía en cada sorbo</h2>
+      <p class="body">El diseño de Sol Aris nace del verano tropical de Girardot. Parte del nombre del producto, Kola Sol, y lo asocia con el sol, la frescura y la energía — "aris" como una terminación fonética juvenil y llamativa.</p>
+      <p class="body">La combinación de azul y amarillo construye una identidad fresca y reconocible, mientras que los elementos frutales de mango y piña, junto al puente férreo de Girardot, refuerzan la sensación de una bebida pensada para las vacaciones.</p>
+      <div class="palette">
+        <div class="swatch"><div class="chip" style="background:#1B2A63"></div>Azul<br>92·82·4·0</div>
+        <div class="swatch"><div class="chip" style="background:#FFD11C"></div>Amarillo<br>0·18·89·0</div>
+        <div class="swatch"><div class="chip" style="background:#000"></div>Negro<br>0·0·0·100</div>
+        <div class="swatch"><div class="chip" style="background:#fff"></div>Blanco<br>0·0·0·0</div>
+        <div class="swatch"><div class="chip" style="background:#B2FAF7"></div>Cielo<br>30·2·3·0</div>
+      </div>
+    </div>
+    <svg class="bridge-art" viewBox="0 0 480 300" aria-hidden="true">
+      <g fill="none" stroke="#4A5590" stroke-width="1.4">
+        <path d="M40,220 L120,120 L200,220"/>
+        <path d="M120,120 L120,220"/>
+        <path d="M76,170 L164,170"/>
+        <path d="M200,220 L280,120 L360,220"/>
+        <path d="M280,120 L280,220"/>
+        <path d="M236,170 L324,170"/>
+        <line x1="30" y1="220" x2="370" y2="220"/>
+      </g>
+      <g stroke="#D4A82F" stroke-width="1.4" opacity="0.9">
+        <line x1="20" y1="230" x2="380" y2="230"/>
+        <line x1="20" y1="230" x2="20" y2="244"/>
+        <line x1="380" y1="230" x2="380" y2="244"/>
+      </g>
+      <circle cx="360" cy="60" r="26" fill="none" stroke="#D4A82F" stroke-width="1.4"/>
+      <line x1="80" y1="255" x2="320" y2="255" stroke="#2B3670" stroke-width="1"/>
+      <line x1="60" y1="266" x2="340" y2="266" stroke="#2B3670" stroke-width="1"/>
+    </svg>
+  </div>
+</section>
+
+<section class="origen" id="origen">
+  <div class="max">
+    <div>
+      <span class="kicker">Origen</span>
+      <h2 style="font-size:clamp(1.7rem,3vw,2.2rem); margin-bottom:18px;">Hecha en Girardot, Colombia</h2>
+      <p style="font-size:1rem; max-width:52ch;">Sol Aris es producida por Gaseosas de Girardot S.A.S, en un municipio conocido por su clima cálido, su río y su puente férreo — el mismo espíritu tropical que inspira cada lata y cada caja.</p>
+      <ul class="fact-list">
+        <li><span class="dot"></span> Elaborada con una mezcla tropical de piña y mango.</li>
+        <li><span class="dot"></span> Sabor auténtico en cada presentación.</li>
+        <li><span class="dot"></span> Envase reciclable · manténgase en un lugar fresco y seco.</li>
+        <li><span class="dot"></span> Producto no alcohólico.</li>
+      </ul>
+    </div>
+    <div class="origen-card">
+      <h3>Gaseosas de Girardot S.A.S</h3>
+      <p>Calle 16 #2-00, Girardot — Cundinamarca, Colombia<br>
+      Tel: (601) 888 4941<br>
+      Registro Sanitario RSA-0008448-2019</p>
+      <hr style="border:none; border-top:1px solid var(--border); margin:20px 0;">
+      <p style="font-size:.84rem;">Tipografía de marca: Gabriola (minúscula 8 pt / mayúscula 10 pt) · lettering display 08 pt.</p>
+    </div>
+  </div>
+</section>
+
+<section class="galeria" id="galeria">
+  <div class="max">
+    <div class="sec-head">
+      <span class="kicker">Material gráfico</span>
+      <h2>Afiches de campaña</h2>
+      <p>Piezas gráficas listas para punto de venta y redes — una por cada presentación del producto.</p>
+    </div>
+    <div class="gal-grid">
+      <a class="gal-item" href="assets/afiche_caja.jpg" target="_blank" rel="noopener">
+        <img src="assets/afiche_caja.jpg" alt="Afiche de campaña — presentación en caja">
+        <div class="gal-caption"><strong>Afiche · Caja 200 ml</strong><span>Ver imagen completa ↗</span></div>
+      </a>
+      <a class="gal-item" href="assets/afiche_lata.jpg" target="_blank" rel="noopener">
+        <img src="assets/afiche_lata.jpg" alt="Afiche de campaña — presentación en lata">
+        <div class="gal-caption"><strong>Afiche · Lata 330 ml</strong><span>Ver imagen completa ↗</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="max">
+    <div>
+      <a class="brandmark" href="#top">Sol Aris<span class="dot" style="color:var(--gold-line);">.</span></a>
+      <p style="margin-top:16px; max-width:34ch;">Refresca tu día. Más sol, más vacaciones — una marca de Gaseosas de Girardot S.A.S.</p>
+    </div>
+    <div>
+      <h4>Presentaciones</h4>
+      <p>Caja tetra pak · 200 ml</p>
+      <p>Lata · 330 ml</p>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <address>Calle 16 #2-00, Girardot<br>Cundinamarca, Colombia<br>Tel: (601) 888 4941</address>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© Gaseosas de Girardot S.A.S — Sol Aris</span>
+    <span>Sitio de material de marketing · no es una tienda en línea</span>
+  </div>
+</footer>
+
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+
 </body>
 </html>
