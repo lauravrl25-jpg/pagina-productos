@@ -272,16 +272,14 @@
       <h1>Más sol, más <em>vacaciones</em></h1>
       <p class="lead">Sol Aris destapa el sabor del verano: una mezcla tropical de piña y mango, pensada para el sol, la diversión y los mejores momentos.</p>
       <div class="hero-ctas">
-        <a href="#producto" class="btn btn-navy">Ver presentación en caja</a>
-        <a href="#producto" class="btn btn-outline">Ver presentación en lata</a>
+        <button type="button" class="btn btn-navy" data-select="caja" aria-pressed="true">Ver presentación en caja</button>
+        <button type="button" class="btn btn-outline" data-select="lata" aria-pressed="false">Ver presentación en lata</button>
       </div>
     </div>
     <div class="hero-art" aria-hidden="true">
       <div class="backdrop"></div>
-      <div class="pair">
-        <img class="box" src="img/CAJA-SIN-FONDO.png" alt="Sol Aris en caja de 200 ml">
-        <img class="can" src="img/LATA-SIN-FONDO.png" alt="Sol Aris en lata de 330 ml">
-      </div>
+      <img class="prod-shot is-active" data-shot="caja" src="img/CAJA-EDITADA.png" alt="Sol Aris en caja de 200 ml">
+      <img class="prod-shot" data-shot="lata" src="img/LATA-EDITADA.png" alt="Sol Aris en lata de 330 ml">
     </div>
   </div>
 </section>
